@@ -1,5 +1,5 @@
 locals {
-  test_var = 'testing rundeck'
+  test_var = "testing rundeck"
 }
 
 output "test_var" {
