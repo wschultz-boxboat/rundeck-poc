@@ -1,7 +1,12 @@
-locals {
-  test_var = "testing rundeck"
+data "azurerm_resource_group" "poc" {
+  name = "rundeck-poc"
 }
 
-output "test_var" {
-  value = local.test_var
+resource "azurerm_storage_account" "this" {
+  name = "rundeckpocstorage"
+  resource_group_name = data.azurerm_resource_group.poc.name
+  location = data.azurerm_resource_group.poc.location
+  account_tier = "Standard"
+  account_replication_type = "LRS"
+  cross_tenant_replication_enabled = false
 }
