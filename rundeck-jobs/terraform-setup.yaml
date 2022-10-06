@@ -1,0 +1,17 @@
+- defaultTab: nodes
+  description: ''
+  executionEnabled: true
+  id: ca7734d2-6bb0-4212-924e-caf18e560969
+  loglevel: INFO
+  name: terraform-setup
+  nodeFilterEditable: false
+  plugins:
+    ExecutionLifecycle: null
+  scheduleEnabled: true
+  sequence:
+    commands:
+    - exec: cd /home/rundeck && git clone https://github.com/wschultz-boxboat/rundeck-poc.git
+    - exec: terraform --version
+    keepgoing: false
+    strategy: node-first
+  uuid: ca7734d2-6bb0-4212-924e-caf18e560969

@@ -1,0 +1,16 @@
+- defaultTab: nodes
+  description: ''
+  executionEnabled: true
+  id: 057fcea6-4c51-4379-8f01-ff1446b0fb48
+  loglevel: INFO
+  name: terraform-apply
+  nodeFilterEditable: false
+  plugins:
+    ExecutionLifecycle: null
+  scheduleEnabled: true
+  sequence:
+    commands:
+    - exec: cd /home/rundeck/rundeck-poc && terraform apply plan.tfplan
+    keepgoing: false
+    strategy: node-first
+  uuid: 057fcea6-4c51-4379-8f01-ff1446b0fb48

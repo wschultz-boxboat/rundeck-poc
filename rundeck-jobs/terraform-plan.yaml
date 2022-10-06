@@ -1,0 +1,17 @@
+- defaultTab: nodes
+  description: ''
+  executionEnabled: true
+  id: 93177ea1-85eb-41a2-af4e-fffef938ee7d
+  loglevel: INFO
+  name: terraform-plan
+  nodeFilterEditable: false
+  plugins:
+    ExecutionLifecycle: null
+  scheduleEnabled: true
+  sequence:
+    commands:
+    - exec: cd /home/rundeck/rundeck-poc && terraform init
+    - exec: cd /home/rundeck/rundeck-poc && terraform plan -var-file=poc.tfvars -out=plan.tfplan
+    keepgoing: false
+    strategy: node-first
+  uuid: 93177ea1-85eb-41a2-af4e-fffef938ee7d

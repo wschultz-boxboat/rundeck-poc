@@ -1,0 +1,20 @@
+- defaultTab: nodes
+  description: ''
+  executionEnabled: true
+  id: 7d060265-94bb-48c5-b281-564e0ed02214
+  loglevel: INFO
+  name: terraform-identity-setup
+  nodeFilterEditable: false
+  options:
+  - description: Client secret of app registration identity to use for Azure authentication
+    name: client_secret
+    value: no_secret
+  plugins:
+    ExecutionLifecycle: null
+  scheduleEnabled: true
+  sequence:
+    commands:
+    - exec: echo "client_secret = $RD_OPTION_CLIENT_SECRET" > /home/rundeck/rundeck-poc/poc.tfvars
+    keepgoing: false
+    strategy: node-first
+  uuid: 7d060265-94bb-48c5-b281-564e0ed02214
